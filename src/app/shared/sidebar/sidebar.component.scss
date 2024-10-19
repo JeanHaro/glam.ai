@@ -39,7 +39,7 @@
 
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
 
       padding: 2rem 1rem;
       border-bottom: 0.6px solid #e0e0e0;
@@ -79,6 +79,7 @@
 
       // Descripcion
       .sidebar-link_description {
+        flex: 1;
         margin-right: 2rem;
 
         p {

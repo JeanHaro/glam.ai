@@ -1,0 +1,98 @@
+#menuBar {
+  display: none;
+  visibility: hidden;
+
+  &:checked {
+    // Sidebar
+    ~ .sidebar {
+      width: 100%;
+
+      @media (min-width: 850px) {
+        width: 28rem;
+      }
+    }
+  }
+}
+
+// Sidebar
+.sidebar {
+  width: 0;
+  height: 100%;
+  background-color: var(--colorEntorno);
+  box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+
+  @media (min-width: 850px) {
+    width: 28rem;
+  }
+
+  > img {
+    object-fit: cover;
+    height: 20rem;
+  }
+
+  // Navegacion
+  .sidebar-nav {
+    // Enlaces
+    .sidebar-nav_link {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 2rem 1rem;
+      border-bottom: 0.6px solid #e0e0e0;
+      color: var(--colorPrimario);
+
+      z-index: 10;
+      transition: 0.5s ease;
+
+      &::after {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        background-color: var(--colorPrimario);
+
+        z-index: -1;
+        transition: 0.5s ease;
+      }
+
+      &:hover {
+        color: var(--colorEntorno);
+
+        &::after {
+          width: 100%;
+        }
+      }
+
+      img {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        margin-right: 1rem;
+      }
+
+      // Descripcion
+      .sidebar-link_description {
+        margin-right: 2rem;
+
+        p {
+          &:first-child {
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+
+      fa-icon {
+        font-size: 2.5rem;
+      }
+
+
+    }
+  }
+}

@@ -1,0 +1,70 @@
+#sidebar-bar {
+  display: none;
+  visibility: hidden;
+
+  // Contenedor
+  &:checked ~ .main {
+    grid-template-areas: 'sidebar ';
+    grid-template-columns: 1fr;
+
+    @media (min-width: 850px) {
+      grid-template-columns: 28rem 1fr;
+    }
+
+    app-sidebar {
+      left: 0;
+    }
+
+    app-chat {
+      left: -100rem;
+    }
+  }
+}
+
+.main {
+  display: grid;
+  grid-template-areas: 'chat';
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  @media (min-width: 850px) {
+    grid-template-areas: 'sidebar chat';
+    grid-template-columns: 28rem 1fr;
+  }
+
+  app-sidebar {
+    grid-area: sidebar;
+
+    position: fixed;
+    left: -100rem;
+    height: 100%;
+
+    z-index: 100;
+
+    transition: 0.5s ease;
+
+    @media (min-width: 850px) {
+      position: relative;
+      left: 0;
+    }
+
+    app-chat {
+      grid-area: chat;
+
+      position: absolute;
+      left: 0;
+      height: 100%;
+      z-index: 20;
+
+      transition: 0.5s ease;
+
+      @media (min-width: 850px) {
+        position: relative;
+        left: 0;
+      }
+    }
+  }
+}

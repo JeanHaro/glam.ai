@@ -1,1 +1,186 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  --colorPrimario: #4f267d;
+  --colorPrimarioHover: #3d1669;
+  --colorPrimarioLight: #705192;
+  --colorEntorno: #ffffff;
+  --colorSecundario: #5459a5;
+  --colorSecundarioHover: #414799;
+  --colorSecundarioLight: #7074af;
+  --colorTerciario: #d1bd9c;
+  --colorCuaternario: #a12219;
+  --colorQuinto: #ae176c;
+  --colorNegro: #000000;
+  --fuentePrincipal: "Mulish", sans-serif;
+  --fuenteSecundario: "Open Sans", sans-serif;
+
+  // Esika
+  --colorPrimarioEsika: #000000;
+  --colorSecundarioEsika: #545353;
+  --colorTerciario1Esika: #3B3A3A;
+  --colorTerciario2Esika: #F9D3D1;
+  --colorComplementarioEsika: #E1251B;
+  --colorOpacityEsika: rgba(0, 0, 0, 0.05);
+
+  // L'BEL
+  --colorPrimarioLBEL: #2E1A47;
+  --colorSecundarioLBEL: #493266;
+  --colorTerciario1LBEL: #332347;
+  --colorTerciario2LBEL: #DED8EB;
+  --colorComplementarioLBEL: #B9975B;
+  --colorOpacityLBEL: rgba(46, 26, 71, 0.05);
+
+  // Cyzone
+  --colorPrimarioCyzone: #2E1A47;
+  --colorSecundarioCyzone: #493266;
+  --colorTerciario1Cyzone: #EBD4DF;
+  --colorOpacityCyzone: rgba(169, 0, 97, 0.05);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  margin: 0;
+  padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--colorEntorno);
+  font-family: var(--fuentePrincipal);
+  overflow-x: hidden !important;
+}
+
+/* Global */
+a {
+  text-decoration: none;
+}
+
+img, video {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+h1, h2, h3, h4, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.6rem;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.none {
+  outline: none;
+  border: none;
+}
+
+.min-width {
+  min-width: 28rem;
+}
+
+.max-width {
+  max-width: 140rem;
+  margin: auto;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 1rem 1.5rem;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  font-family: var(--fuenteSecundario);
+  color: var(--colorNegro);
+  background-color: var(--colorEntorno);
+
+  cursor: pointer;
+  transition: 0.5s ease;
+
+  &:hover {
+      background-color: var(--colorTerciarioLight);
+  }
+}
+
+.btn-primary {
+  background-color: var(--colorTerciario);
+  color: var(--colorTerciarioLight);
+
+  &:hover {
+      background-color: var(--colorTerciarioHover);
+      color: var(--colorBlanco);
+  }
+}
+
+.btn-warn_dark {
+  background-color: var(--colorPrimario);
+  color: var(--colorPrimarioLight);
+
+  &:hover {
+      background-color: var(--colorPrimarioHover);
+      color: var(--colorBlanco);
+  }
+}
+
+.btn-warn {
+  background-color: var(--colorPrimarioLight);
+  color: var(--colorPrimarioHover);
+
+  &:hover {
+      background-color: var(--colorPrimarioHover);
+      color: var(--colorBlanco);
+  }
+}
+
+.btn-check {
+  background-color: var(--colorTerciarioLight);
+  color: var(--colorTerciarioHover);
+
+  &:hover {
+      background-color: var(--colorTerciarioHover);
+      color: var(--colorBlanco);
+  }
+}
+
+.input {
+  width: 100%;
+  font-size: 1.6rem;
+  font-family: var(--fuenteSecundario);
+  background-color: var(--colorEntorno);
+  color: var(--colorTerciario);
+  padding: 1.2rem 1.4rem;
+  border-radius: 0.6rem;
+}
+
+.bg-light {
+  background-color: var(--colorTerciarioLight) !important;
+}

@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'glam.ai';
+  // Atributos
+  bar!: boolean;
+
+  valor (item: boolean) {
+    let checked = document.getElementById('sidebar-bar');
+    console.log('item', item);
+    console.log('bar', this.bar);
+    if (!item) {
+      item = this.bar;
+      checked?.setAttribute('checked', 'true');
+    } else {
+      item = this.bar;
+      checked?.removeAttribute('checked');
+    }
+  }
 }

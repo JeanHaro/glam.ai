@@ -6,114 +6,32 @@
     <p>Chat GlamIA</p>
   </div><!-- Header-->
 
-  <div class="chat-content">
-    <div class="chat-content-request">
-      <div class="chat-content-1">
-        <p>Hola.</p>
+  <div class="chat-message">
+    <div id="chat-content" class="chat-content" *ngFor="let item of contentChat; let impar = odd; let par = even;">
+      <div *ngIf="par" class="chat-content-request">
+        <div class="chat-content-1">
+          <p>{{ item.msg }}</p>
 
-        <p>18/10/24 23:06</p>
-      </div>
-    </div><!-- Pregunta -->
+          <p>{{ item.date }}</p>
+        </div>
+      </div><!-- Contenido pregunta -->
 
-    <div class="chat-content-response">
-      <img src="/assets/images/profile-ia.jpeg" alt="Imagen de la IA">
-
-      <div class="chat-content-1">
-        <p>Hola ¿En qué puedo ayudarte?</p>
-
-        <p>18/10/24 23:06</p>
-      </div>
-    </div><!-- Respuesta -->
-
-    <div class="chat-content-request">
-      <div class="chat-content-1">
-        <p>En todo.</p>
-
-        <p>18/10/24 23:06</p>
-      </div>
-    </div><!-- Preguntas-->
-
-    <div class="chat-content-request">
-      <div class="chat-content-1">
-        <p>Hola.</p>
-
-        <p>18/10/24 23:06</p>
-      </div>
-    </div><!-- Pregunta -->
-
-    <div class="chat-content-response">
-      <img src="/assets/images/profile-ia.jpeg" alt="Imagen de la IA">
-
-      <div class="chat-content-1">
-        <p>Hola ¿En qué puedo ayudarte?</p>
-
-        <p>18/10/24 23:06</p>
-      </div>
-    </div><!-- Respuesta -->
-
-    <div class="chat-content-request">
-      <div class="chat-content-1">
-        <p>En todo.</p>
-
-        <p>18/10/24 23:06</p>
-      </div>
-    </div><!-- Preguntas-->
-
-    <div class="chat-content-request">
-      <div class="chat-content-1">
+      <div *ngIf="impar" class="chat-content-response">
         <img src="/assets/images/profile-ia.jpeg" alt="Imagen de la IA">
-      </div>
+
+        <div class="chat-content-1">
+          <p>{{ item.msg }}</p>
+
+          <p>{{ item.date }}</p>
+        </div>
+      </div><!-- Contenido respuesta -->
     </div><!-- Pregunta -->
-
-    <div class="chat-content-response">
-      <img src="/assets/images/profile-ia.jpeg" alt="Imagen de la IA">
-
-      <div class="chat-content-1">
-        <p>Hola ¿En qué puedo ayudarte?</p>
-
-        <p>18/10/24 23:06</p>
-      </div>
-    </div><!-- Respuesta -->
-
-    <div class="chat-content-request">
-      <div class="chat-content-1">
-        <p>En todo.</p>
-
-        <p>18/10/24 23:06</p>
-      </div>
-    </div><!-- Preguntas-->
-
-    <div class="chat-content-request">
-      <div class="chat-content-1">
-        <p>Hola.</p>
-
-        <p>18/10/24 23:06</p>
-      </div>
-    </div><!-- Pregunta -->
-
-    <div class="chat-content-response">
-      <img src="/assets/images/profile-ia.jpeg" alt="Imagen de la IA">
-
-      <div class="chat-content-1">
-        <p>Hola ¿En qué puedo ayudarte?</p>
-
-        <p>18/10/24 23:06</p>
-      </div>
-    </div><!-- Respuesta -->
-
-    <div class="chat-content-request">
-      <div class="chat-content-1">
-        <p>En todo.</p>
-
-        <p>18/10/24 23:06</p>
-      </div>
-    </div><!-- Preguntas-->
   </div><!-- Mensajes -->
 
   <div class="chat-inputs">
-    <input class="input none" type="text" placeholder="Escribe un mensaje">
+    <input (keyup.enter)="searchMessage()" class="input none" id="ia-text" type="text" placeholder="Escribe un mensaje" #txtTagInput>
 
-    <input type="file"  id="chat-file">
+    <input type="file"  id="chat-file" accept="image/">
 
     <label for="chat-file" title="Subir archivo">
       <fa-icon [icon]="faPlus"></fa-icon>
